@@ -12,3 +12,35 @@ body {
     background-color: #f8f9fa;
     color: #333333;
 }
+/* Navigation Bar */
+
+header {
+    background-color: #2E7D32;
+    padding: 20px 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h2 {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #D4AF37;
+}
