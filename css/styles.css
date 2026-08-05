@@ -96,3 +96,22 @@ nav a:hover {
 .button:hover {
     background-color: #1B5E20;
 }
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.logo h2 {
+    color: white;
+    font-size: 2rem;
+}
