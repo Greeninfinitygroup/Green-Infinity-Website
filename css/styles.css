@@ -4482,3 +4482,58 @@ html {
     }
 
 }
+
+/* =========================================================
+   NEWS — DESKTOP LAYOUT FIX
+   ========================================================= */
+
+.news-section .container {
+    width: min(
+        calc(100% - 100px),
+        1380px
+    );
+
+    margin-inline: auto;
+}
+
+/* Keep the News introduction on one line on desktop */
+.news-section .news-introduction {
+    max-width: none;
+    width: 100%;
+}
+
+/* Give the three cards balanced spacing */
+.news-section .news-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* Make sure cards fill their columns evenly */
+.news-section .news-card {
+    width: 100%;
+}
+
+/* =========================================================
+   NEWS — MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .news-section .container {
+        width: min(
+            calc(100% - 40px),
+            1180px
+        );
+    }
+
+    .news-section .news-introduction {
+        max-width: 100%;
+    }
+
+    .news-section .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
