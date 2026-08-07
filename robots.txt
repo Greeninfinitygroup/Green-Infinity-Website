@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://Greeninfinitygroup.github.io/Green-Infinity/sitemap.xml
+Sitemap: https://greeninfinitygroup.github.io/Green-Infinity-Website/sitemap.xml
