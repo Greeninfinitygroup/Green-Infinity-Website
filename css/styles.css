@@ -2677,3 +2677,263 @@ html {
         );
     }
 }
+
+/* =========================================================
+   GREEN INFINITY — FINAL HEADER + HERO POLISH
+   Version 1.0
+   ========================================================= */
+
+
+/* =========================================================
+   1. HEADER — LEFT-ALIGNED BRAND
+   ========================================================= */
+
+.site-header .header-container {
+    width: 100%;
+    max-width: none;
+
+    margin: 0;
+
+    padding-left: 36px;
+    padding-right: 36px;
+
+    box-sizing: border-box;
+}
+
+.site-header .brand {
+    margin-left: 0;
+}
+
+
+/* Keep navigation toward the right */
+
+.site-header .primary-navigation {
+    margin-left: auto;
+}
+
+
+/* =========================================================
+   2. HERO — FINAL CONTENT WIDTH
+   ========================================================= */
+
+.hero .hero-container {
+    width: min(
+        calc(100% - 48px),
+        var(--container-width)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   3. HERO — FINAL TYPOGRAPHY
+   ========================================================= */
+
+.hero .hero-content {
+    width: min(700px, 100%);
+
+    padding-top: 120px;
+    padding-bottom: 110px;
+}
+
+.hero .hero-eyebrow {
+    margin-bottom: 20px;
+
+    color: #c9df9c;
+
+    font-size: 0.70rem;
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    max-width: 700px;
+
+    margin-bottom: 26px;
+
+    font-size: clamp(
+        3.2rem,
+        5.25vw,
+        5.35rem
+    );
+
+    line-height: 1.02;
+
+    letter-spacing: -0.038em;
+}
+
+.hero h1 span {
+    color: #cbe69d;
+}
+
+.hero .hero-description {
+    max-width: 600px;
+
+    margin-bottom: 34px;
+
+    font-size: 1rem;
+
+    line-height: 1.78;
+}
+
+
+/* =========================================================
+   4. HERO — FINAL IMAGE OVERLAY
+   ========================================================= */
+
+.hero .hero-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 27, 19, 0.91) 0%,
+            rgba(3, 27, 19, 0.76) 32%,
+            rgba(3, 27, 19, 0.48) 65%,
+            rgba(3, 27, 19, 0.20) 100%
+        );
+}
+
+
+/* =========================================================
+   5. HERO — BUTTON REFINEMENT
+   ========================================================= */
+
+.hero .hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.hero .hero-actions a {
+    min-height: 52px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 28px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   6. MOBILE HEADER
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .site-header .header-container {
+        width: 100%;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .site-header .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .site-header .brand-name {
+        font-size: 1rem;
+    }
+
+
+    /* ---------- Mobile Hero ---------- */
+
+    .hero .hero-container {
+        width: calc(100% - 36px);
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero .hero-content {
+        width: 100%;
+
+        padding-top: 75px;
+        padding-bottom: 85px;
+    }
+
+    .hero h1 {
+        max-width: 100%;
+
+        font-size: clamp(
+            2.8rem,
+            11.5vw,
+            4.1rem
+        );
+
+        line-height: 1.03;
+    }
+
+    .hero .hero-description {
+        max-width: 100%;
+
+        font-size: 0.95rem;
+
+        line-height: 1.75;
+    }
+
+    .hero .hero-actions {
+        gap: 10px;
+    }
+
+    .hero .hero-actions a {
+        min-height: 50px;
+
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+}
+
+
+/* =========================================================
+   7. VERY SMALL MOBILE SCREENS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header .header-container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero .hero-container {
+        width: calc(100% - 32px);
+    }
+
+    .hero .hero-content {
+        padding-top: 60px;
+        padding-bottom: 70px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            2.5rem,
+            12vw,
+            3.5rem
+        );
+    }
+
+    .hero .hero-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero .hero-actions a {
+        width: 100%;
+    }
+}
