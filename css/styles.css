@@ -150,23 +150,21 @@ outline-offset: 4px;
 }
 
 /* =========================================================
-4. LAYOUT
+   4. LAYOUT
 ========================================================= */
 
 .container {
-width: min(
-calc(100% - 48px),
-var(--container-width)
-);
+    width: min(
+        calc(100% - 80px),
+        var(--container-width)
+    );
 
-```
-margin-inline: auto;
-```
-
+    margin-inline: auto;
 }
 
+
 .section {
-padding: 110px 0;
+    padding: 110px 0;
 }
 
 /* =========================================================
@@ -4470,6 +4468,17 @@ html {
 
     .news-card h3 {
         font-size: 1.8rem;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .container {
+        width: min(
+            calc(100% - 40px),
+            var(--container-width)
+        );
     }
 
 }
