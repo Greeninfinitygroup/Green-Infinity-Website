@@ -4484,55 +4484,70 @@ html {
 }
 
 /* =========================================================
-   NEWS — DESKTOP LAYOUT FIX
+   NEWS SECTION — FINAL DESKTOP SPACING FIX
    ========================================================= */
 
-.news-section .container {
+#news .container {
     width: min(
-        calc(100% - 100px),
+        calc(100% - 120px),
         1380px
     );
 
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Keep the News introduction on one line on desktop */
-.news-section .news-introduction {
+
+/* ---------------------------------------------------------
+   News introduction
+   --------------------------------------------------------- */
+
+#news .section-header {
     max-width: none;
-    width: 100%;
 }
 
-/* Give the three cards balanced spacing */
-.news-section .news-grid {
+#news .news-introduction {
     width: 100%;
+    max-width: 1000px;
+}
+
+
+/* ---------------------------------------------------------
+   News cards
+   --------------------------------------------------------- */
+
+#news .news-grid {
+    width: 100%;
+
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
     gap: 30px;
 }
 
-/* Make sure cards fill their columns evenly */
-.news-section .news-card {
+
+#news .news-card {
     width: 100%;
 }
 
-/* =========================================================
-   NEWS — MOBILE
-   ========================================================= */
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
 
 @media (max-width: 900px) {
 
-    .news-section .container {
-        width: min(
-            calc(100% - 40px),
-            1180px
-        );
+    #news .container {
+        width: calc(100% - 40px);
     }
 
-    .news-section .news-introduction {
+    #news .news-introduction {
         max-width: 100%;
     }
 
-    .news-section .news-grid {
+    #news .news-grid {
         grid-template-columns: 1fr;
     }
 
