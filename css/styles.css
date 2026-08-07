@@ -524,159 +524,160 @@ border-bottom: 0;
 }
 
 /* =========================================================
-10. HERO
-========================================================= */
+   10. HERO
+   ========================================================= */
 
 .hero {
-position: relative;
+    position: relative;
 
-```
-min-height: 100vh;
+    min-height: 100vh;
+    min-height: 760px;
 
-display: flex;
-align-items: center;
+    display: flex;
+    align-items: center;
 
-overflow: hidden;
+    overflow: hidden;
 
-background: var(--color-primary-deep);
-```
-
+    background: var(--color-primary-deep);
 }
 
 .hero-background {
-position: absolute;
-inset: 0;
+    position: absolute;
+    inset: 0;
 
-```
-z-index: 0;
-```
+    z-index: 0;
 
+    overflow: hidden;
 }
 
 .hero-image {
-width: 100%;
-height: 100%;
+    width: 100%;
+    height: 100%;
 
-```
-object-fit: cover;
-```
+    object-fit: cover;
+    object-position: center;
 
+    transform: scale(1.01);
 }
 
 .hero-overlay {
-position: absolute;
-inset: 0;
+    position: absolute;
+    inset: 0;
 
-```
-background:
-    linear-gradient(
-        90deg,
-        rgba(3, 28, 20, 0.92) 0%,
-        rgba(3, 28, 20, 0.75) 40%,
-        rgba(3, 28, 20, 0.30) 100%
-    );
-```
-
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 27, 19, 0.94) 0%,
+            rgba(3, 27, 19, 0.82) 32%,
+            rgba(3, 27, 19, 0.54) 62%,
+            rgba(3, 27, 19, 0.25) 100%
+        );
 }
 
 .hero-container {
-position: relative;
-z-index: 1;
+    position: relative;
 
-```
-padding-top: var(--header-height);
-```
+    z-index: 1;
 
+    width: 100%;
+
+    padding-top: var(--header-height);
 }
 
 .hero-content {
-width: min(760px, 100%);
+    width: min(780px, 100%);
 
-```
-padding: 100px 0 120px;
-```
-
+    padding: 120px 0 135px;
 }
 
 .hero-eyebrow {
-color: rgba(255, 255, 255, 0.82);
+    margin-bottom: 22px;
+
+    color: #b9d98a;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
 }
 
 .hero h1 {
-color: var(--color-white);
+    max-width: 760px;
+
+    margin-bottom: 30px;
+
+    color: #ffffff;
+
+    font-size: clamp(
+        3.6rem,
+        7vw,
+        6.8rem
+    );
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
 }
 
 .hero h1 span {
-display: block;
+    display: block;
 
-```
-color: #c7e49c;
-```
-
+    color: #c8e49c;
 }
 
 .hero-description {
-width: min(660px, 100%);
+    width: min(650px, 100%);
 
-```
-margin-bottom: 38px;
+    margin-bottom: 40px;
 
-color: rgba(255, 255, 255, 0.86);
+    color: rgba(255, 255, 255, 0.86);
 
-font-size: 1.08rem;
-line-height: 1.8;
-```
-
+    font-size: 1.08rem;
+    line-height: 1.85;
 }
 
 .hero-actions {
-display: flex;
+    display: flex;
 
-```
-flex-wrap: wrap;
+    flex-wrap: wrap;
 
-gap: 14px;
-```
-
+    gap: 14px;
 }
 
 .scroll-indicator {
-position: absolute;
+    position: absolute;
 
-```
-right: 38px;
-bottom: 32px;
+    right: 38px;
+    bottom: 32px;
 
-z-index: 2;
+    z-index: 2;
 
-display: flex;
+    display: flex;
 
-align-items: center;
-gap: 12px;
+    align-items: center;
 
-color: rgba(255, 255, 255, 0.7);
+    gap: 12px;
 
-font-size: 0.7rem;
-font-weight: 700;
+    color: rgba(255, 255, 255, 0.68);
 
-letter-spacing: 0.16em;
-text-transform: uppercase;
+    font-size: 0.68rem;
+    font-weight: 700;
 
-writing-mode: vertical-rl;
-```
+    letter-spacing: 0.16em;
 
+    text-transform: uppercase;
+
+    writing-mode: vertical-rl;
 }
 
 .scroll-line {
-display: block;
+    display: block;
 
-```
-width: 1px;
-height: 52px;
+    width: 1px;
+    height: 52px;
 
-background: rgba(255, 255, 255, 0.55);
-```
-
+    background: rgba(255, 255, 255, 0.55);
 }
 
 /* =========================================================
@@ -1951,29 +1952,40 @@ h2 {
 }
 
 .hero {
-    min-height: 760px;
+    min-height: 720px;
 }
 
 .hero-content {
-    padding: 90px 0 110px;
+    padding: 90px 0 105px;
+}
+
+.hero h1 {
+    font-size: clamp(
+        3rem,
+        13vw,
+        4.5rem
+    );
+
+    line-height: 1;
 }
 
 .hero-description {
-    font-size: 1rem;
-}
-
-.scroll-indicator {
-    display: none;
+    font-size: 0.98rem;
+    line-height: 1.75;
 }
 
 .hero-overlay {
     background:
         linear-gradient(
             90deg,
-            rgba(3, 28, 20, 0.94),
-            rgba(3, 28, 20, 0.62)
+            rgba(3, 27, 19, 0.95),
+            rgba(3, 27, 19, 0.68)
         );
 }
+
+.scroll-indicator {
+    display: none;
+}}
 
 .about-grid,
 .highlight-grid,
