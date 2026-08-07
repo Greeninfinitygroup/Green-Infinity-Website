@@ -2445,3 +2445,235 @@ html {
             );
     }
 }
+
+/* =========================================================
+   DEFINITIVE HEADER / HERO OVERLAP FIX
+   Green Infinity Version 1.0
+   ========================================================= */
+
+/* ---------- Header ---------- */
+
+.site-header {
+    position: fixed !important;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    height: 88px;
+    min-height: 88px;
+
+    z-index: 9999 !important;
+
+    background: #ffffff !important;
+
+    border-bottom: 1px solid rgba(6, 44, 32, 0.10);
+
+    box-sizing: border-box;
+}
+
+
+/* ---------- Header Inner Container ---------- */
+
+.site-header .header-container {
+    width: min(
+        calc(100% - 48px),
+        var(--container-width)
+    );
+
+    height: 88px;
+    min-height: 88px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+
+/* ---------- Logo ---------- */
+
+.site-header .brand {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 12px;
+}
+
+.site-header .brand-logo {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+}
+
+.site-header .brand-name {
+    white-space: nowrap;
+
+    color: var(--color-primary-deep);
+}
+
+
+/* ---------- Navigation ---------- */
+
+.site-header .primary-navigation {
+    position: relative;
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+
+    height: 88px;
+
+    gap: 34px;
+}
+
+.site-header .primary-navigation .nav-link {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    height: 88px;
+
+    color: #27332e;
+
+    text-decoration: none;
+}
+
+
+/* ---------- Hero ---------- */
+
+.hero {
+    position: relative;
+
+    z-index: 1;
+
+    /* This is the important fix:
+       the hero physically starts below
+       the fixed 88px header. */
+
+    margin-top: 88px;
+
+    padding-top: 0 !important;
+
+    min-height: calc(100vh - 88px);
+}
+
+
+/* ---------- Hero Background ---------- */
+
+.hero .hero-background {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+.hero .hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.hero .hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+}
+
+
+/* ---------- Hero Content ---------- */
+
+.hero .hero-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(
+        calc(100% - 48px),
+        var(--container-width)
+    );
+
+    margin: 0 auto;
+
+    padding-top: 0;
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+    .site-header {
+        height: 72px;
+        min-height: 72px;
+    }
+
+    .site-header .header-container {
+        height: 72px;
+        min-height: 72px;
+
+        width: min(
+            calc(100% - 32px),
+            var(--container-width)
+        );
+    }
+
+    .site-header .brand-logo {
+        width: 44px;
+        height: 44px;
+    }
+
+    .site-header .primary-navigation {
+        height: 72px;
+    }
+
+    .site-header .primary-navigation .nav-link {
+        height: 72px;
+    }
+
+    .hero {
+        margin-top: 72px;
+
+        padding-top: 0 !important;
+
+        min-height: calc(100vh - 72px);
+    }
+
+    .hero .hero-container {
+        width: min(
+            calc(100% - 32px),
+            var(--container-width)
+        );
+    }
+}
