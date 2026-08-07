@@ -3554,3 +3554,265 @@ html {
         font-size: 0.95rem;
     }
 }
+
+/* =========================================================
+   TEAM SECTION — GREEN INFINITY
+   ========================================================= */
+
+.team-section {
+    background: #f7f9f6;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   Team header
+   --------------------------------------------------------- */
+
+.team-section .section-header {
+    margin-bottom: 64px;
+}
+
+.team-section .section-header h2 {
+    max-width: 760px;
+    margin: 18px 0 0;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.team-section .section-rule {
+    width: 100%;
+    height: 1px;
+    margin-top: 42px;
+    background: #d8dfda;
+}
+
+
+/* ---------------------------------------------------------
+   Team profile
+   --------------------------------------------------------- */
+
+.team-section .team-profile {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.9fr) minmax(420px, 1.1fr);
+    gap: clamp(60px, 8vw, 120px);
+    align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   Team image
+   --------------------------------------------------------- */
+
+.team-section .team-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: #dfe7e0;
+}
+
+.team-section .team-image-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(12, 45, 31, 0) 60%,
+        rgba(12, 45, 31, 0.08) 100%
+    );
+}
+
+.team-section .team-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+}
+
+@media (hover: hover) {
+
+    .team-section .team-image-wrapper:hover .team-image {
+        transform: scale(1.025);
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Team content
+   --------------------------------------------------------- */
+
+.team-section .team-content {
+    max-width: 620px;
+}
+
+.team-section .team-content > .eyebrow {
+    margin-bottom: 18px;
+}
+
+.team-section .team-content h3 {
+    margin: 0 0 28px;
+    font-size: clamp(2.8rem, 4.5vw, 5rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    color: #14251e;
+}
+
+.team-section .team-introduction {
+    max-width: 570px;
+    margin: 0 0 38px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #52635b;
+}
+
+
+/* ---------------------------------------------------------
+   Profile highlights
+   --------------------------------------------------------- */
+
+.team-section .profile-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #d8dfda;
+}
+
+.team-section .profile-highlights li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 20px 0;
+    border-bottom: 1px solid #d8dfda;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #33463d;
+}
+
+.team-section .profile-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    border-radius: 50%;
+    background: #78be20;
+    color: #102c22;
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+
+/* ---------------------------------------------------------
+   Get in touch link
+   --------------------------------------------------------- */
+
+.team-section .text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 34px;
+    color: #102c22;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        gap 0.2s ease,
+        color 0.2s ease;
+}
+
+.team-section .text-link:hover {
+    gap: 15px;
+    color: #5b941c;
+}
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .team-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .team-section .team-profile {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .team-section .team-image-wrapper {
+        max-width: 620px;
+    }
+
+    .team-section .team-content {
+        max-width: 700px;
+    }
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .team-section {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .team-section .section-header {
+        margin-bottom: 45px;
+    }
+
+    .team-section .section-header h2 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    .team-section .section-rule {
+        margin-top: 30px;
+    }
+
+    .team-section .team-profile {
+        gap: 42px;
+    }
+
+    .team-section .team-image-wrapper {
+        width: 100%;
+    }
+
+    .team-section .team-content h3 {
+        font-size: clamp(2.7rem, 12vw, 4rem);
+        margin-bottom: 22px;
+    }
+
+    .team-section .team-introduction {
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 30px;
+    }
+
+    .team-section .profile-highlights li {
+        grid-template-columns: 25px 1fr;
+        gap: 12px;
+        padding: 17px 0;
+        font-size: 0.95rem;
+    }
+
+    .team-section .profile-marker {
+        width: 21px;
+        height: 21px;
+    }
+}
