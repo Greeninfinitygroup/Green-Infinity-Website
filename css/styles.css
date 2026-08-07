@@ -4326,3 +4326,246 @@ html {
         font-size: 0.95rem;
     }
 }
+
+/* =========================================================
+   NEWS SECTION
+========================================================= */
+
+.news-section {
+    position: relative;
+    padding-top: clamp(6rem, 10vw, 9rem);
+    padding-bottom: clamp(6rem, 10vw, 9rem);
+    background: var(--color-background);
+}
+
+
+/* ---------------------------------------------------------
+   News introduction
+--------------------------------------------------------- */
+
+.news-introduction {
+    max-width: 900px;
+    margin-top: 2rem;
+}
+
+
+/* ---------------------------------------------------------
+   News grid
+--------------------------------------------------------- */
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: clamp(3.5rem, 6vw, 5rem);
+}
+
+
+/* ---------------------------------------------------------
+   News cards
+--------------------------------------------------------- */
+
+.news-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 390px;
+
+    padding: clamp(2rem, 3vw, 3rem);
+
+    background: #ffffff;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 10px;
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease;
+}
+
+
+/* Green accent line */
+
+.news-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: -1px;
+    left: -1px;
+    right: -1px;
+
+    height: 4px;
+
+    background: var(--color-accent);
+
+    border-radius: 10px 10px 0 0;
+}
+
+
+/* ---------------------------------------------------------
+   Hover state
+--------------------------------------------------------- */
+
+.news-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(61, 92, 38, 0.25);
+
+    box-shadow:
+        0 18px 45px rgba(20, 35, 25, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   Card metadata
+--------------------------------------------------------- */
+
+.news-card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+
+
+.news-category,
+.news-date {
+    margin: 0;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+
+.news-category {
+    color: var(--color-accent-dark);
+}
+
+
+.news-date {
+    color: var(--color-text-muted);
+
+    text-align: right;
+}
+
+
+/* ---------------------------------------------------------
+   Card heading
+--------------------------------------------------------- */
+
+.news-card h3 {
+    max-width: 480px;
+
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(1.7rem, 2.4vw, 2.35rem);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.025em;
+
+    color: var(--color-text);
+}
+
+
+/* ---------------------------------------------------------
+   Card description
+--------------------------------------------------------- */
+
+.news-excerpt {
+    max-width: 500px;
+
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+
+    line-height: 1.75;
+}
+
+
+/* ---------------------------------------------------------
+   Card link
+--------------------------------------------------------- */
+
+.news-card .text-link {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive — tablet
+--------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+    .news-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .news-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Responsive — mobile
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+    .news-section {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+
+        margin-top: 3rem;
+    }
+
+    .news-card:last-child {
+        grid-column: auto;
+    }
+
+    .news-card {
+        min-height: 340px;
+
+        padding: 1.75rem;
+    }
+
+    .news-card-top {
+        margin-bottom: 3rem;
+    }
+
+    .news-card h3 {
+        font-size: 1.8rem;
+    }
+
+}
