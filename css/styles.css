@@ -2937,3 +2937,411 @@ html {
         width: 100%;
     }
 }
+
+/* =========================================================
+   GREEN INFINITY — RESEARCH SECTION
+   Version 1.0
+   ========================================================= */
+
+
+/* =========================================================
+   RESEARCH SECTION
+   ========================================================= */
+
+.research-section {
+    position: relative;
+
+    padding: 120px 0 130px;
+
+    background: #f7f9f6;
+
+    overflow: hidden;
+}
+
+
+/* Main research container */
+
+.research-container {
+    width: min(
+        calc(100% - 48px),
+        var(--container-width)
+    );
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   RESEARCH HEADING
+   ========================================================= */
+
+.research-heading {
+    max-width: 760px;
+
+    margin-bottom: 64px;
+}
+
+.research-heading .section-eyebrow {
+    margin: 0 0 18px;
+
+    color: #526b38;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+.research-heading h2 {
+    max-width: 720px;
+
+    margin: 0;
+
+    color: #17231d;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(
+        3rem,
+        5vw,
+        5rem
+    );
+
+    font-weight: 400;
+
+    letter-spacing: -0.04em;
+
+    line-height: 0.98;
+}
+
+.research-heading h2 span {
+    display: block;
+
+    color: #55752e;
+}
+
+
+/* =========================================================
+   RESEARCH GRID
+   ========================================================= */
+
+.research-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   RESEARCH CARD
+   ========================================================= */
+
+.research-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 430px;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce4dc;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+}
+
+
+/* Green top accent */
+
+.research-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #82bf35;
+}
+
+
+/* Hover */
+
+.research-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c9d7c9;
+
+    box-shadow:
+        0 18px 40px rgba(21, 47, 31, 0.08);
+}
+
+
+/* =========================================================
+   CARD NUMBER
+   ========================================================= */
+
+.research-card-number {
+    margin-bottom: 72px;
+
+    color: #52732d;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.research-card-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+/* Category */
+
+.research-card-category {
+    margin: 0 0 14px;
+
+    color: #55703e;
+
+    font-size: 0.62rem;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+
+/* Research title */
+
+.research-card h3 {
+    max-width: 350px;
+
+    margin: 0 0 18px;
+
+    color: #17231d;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(
+        1.65rem,
+        2.1vw,
+        2.15rem
+    );
+
+    font-weight: 400;
+
+    letter-spacing: -0.025em;
+
+    line-height: 1.08;
+}
+
+
+/* Description */
+
+.research-card-description {
+    max-width: 410px;
+
+    margin: 0;
+
+    color: #53615a;
+
+    font-size: 0.92rem;
+
+    line-height: 1.72;
+}
+
+
+/* =========================================================
+   CARD LINK
+   ========================================================= */
+
+.research-card-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    margin-top: auto;
+    padding-top: 36px;
+
+    color: #16241c;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        color 180ms ease,
+        gap 180ms ease;
+}
+
+.research-card-link span {
+    font-size: 1rem;
+
+    transition:
+        transform 180ms ease;
+}
+
+.research-card-link:hover {
+    color: #5b8d25;
+
+    gap: 12px;
+}
+
+.research-card-link:hover span {
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.research-card-link:focus-visible {
+    outline: 2px solid #6da52e;
+
+    outline-offset: 5px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .research-section {
+        padding-top: 100px;
+        padding-bottom: 110px;
+    }
+
+    .research-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .research-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .research-card:last-child
+    .research-card-description {
+        max-width: 650px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .research-section {
+        padding: 80px 0 90px;
+    }
+
+    .research-container {
+        width: calc(100% - 36px);
+    }
+
+    .research-heading {
+        margin-bottom: 42px;
+    }
+
+    .research-heading h2 {
+        font-size: clamp(
+            2.65rem,
+            11vw,
+            4rem
+        );
+
+        line-height: 1;
+    }
+
+    .research-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+    .research-card,
+    .research-card:last-child {
+        grid-column: auto;
+
+        min-height: 390px;
+
+        padding: 25px;
+    }
+
+    .research-card-number {
+        margin-bottom: 60px;
+    }
+
+    .research-card h3 {
+        max-width: 100%;
+
+        font-size: 1.75rem;
+    }
+
+    .research-card-description {
+        max-width: 100%;
+
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .research-card,
+    .research-card-link,
+    .research-card-link span {
+        transition: none;
+    }
+
+    .research-card:hover {
+        transform: none;
+    }
+}
