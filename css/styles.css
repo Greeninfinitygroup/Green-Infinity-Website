@@ -3816,3 +3816,259 @@ html {
         height: 21px;
     }
 }
+
+/* =========================================================
+   PUBLICATIONS SECTION
+   ========================================================= */
+
+.publications-section {
+    position: relative;
+    background: #f5f7f3;
+    overflow: hidden;
+}
+
+.publications-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.8fr);
+    gap: clamp(3rem, 7vw, 8rem);
+    align-items: center;
+    min-height: 680px;
+}
+
+.publications-content {
+    max-width: 760px;
+}
+
+.publications-content h2 {
+    max-width: 720px;
+    margin-bottom: 2rem;
+}
+
+.publications-content .section-rule {
+    margin-bottom: 2rem;
+}
+
+.publications-content .lead {
+    max-width: 720px;
+    margin-bottom: 1.5rem;
+}
+
+.publications-content > p:not(.eyebrow):not(.lead) {
+    max-width: 650px;
+    margin-bottom: 2.5rem;
+}
+
+
+/* Google Scholar button */
+
+.publications-content .button-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    background: #82c91e;
+    color: #10231b;
+
+    border: 1px solid #82c91e;
+    border-radius: 999px;
+
+    padding: 0.95rem 1.6rem;
+
+    font-weight: 700;
+    text-decoration: none;
+
+    transition:
+        background-color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.publications-content .button-primary:hover {
+    background: #a4d65e;
+    border-color: #a4d65e;
+    transform: translateY(-2px);
+}
+
+.publications-content .button-primary:focus-visible {
+    outline: 3px solid rgba(130, 201, 30, 0.35);
+    outline-offset: 4px;
+}
+
+
+/* Publications visual */
+
+.publications-visual {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual-panel {
+    position: relative;
+
+    width: min(100%, 520px);
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid rgba(39, 76, 52, 0.18);
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(130, 201, 30, 0.18),
+            rgba(130, 201, 30, 0.04) 38%,
+            transparent 68%
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* Decorative rings */
+
+.visual-panel::before,
+.visual-panel::after {
+    content: "";
+    position: absolute;
+    inset: 9%;
+
+    border: 1px solid rgba(39, 76, 52, 0.14);
+    border-radius: 50%;
+}
+
+.visual-panel::after {
+    inset: 20%;
+    border-color: rgba(130, 201, 30, 0.35);
+}
+
+
+/* Subtle research grid */
+
+.visual-grid {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.45;
+
+    background-image:
+        linear-gradient(
+            rgba(39, 76, 52, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(39, 76, 52, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 42px 42px;
+
+    mask-image: radial-gradient(
+        circle,
+        black 20%,
+        transparent 72%
+    );
+}
+
+
+/* Center typography */
+
+.visual-center {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    color: #163326;
+}
+
+.visual-center span {
+    margin-bottom: 0.75rem;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+}
+
+.visual-center strong {
+    display: block;
+
+    font-family: var(
+        --font-display,
+        Georgia,
+        "Times New Roman",
+        serif
+    );
+
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    line-height: 0.95;
+    font-weight: 500;
+}
+
+.visual-center small {
+    margin-top: 1rem;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+
+    color: #587542;
+}
+
+
+/* =========================================================
+   PUBLICATIONS RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .publications-layout {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        min-height: auto;
+    }
+
+    .publications-content {
+        max-width: 100%;
+    }
+
+    .publications-visual {
+        min-height: 420px;
+    }
+
+    .visual-panel {
+        width: min(90%, 440px);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .publications-layout {
+        gap: 3rem;
+    }
+
+    .publications-visual {
+        min-height: 340px;
+    }
+
+    .visual-panel {
+        width: min(100%, 340px);
+    }
+
+    .publications-content .button-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
