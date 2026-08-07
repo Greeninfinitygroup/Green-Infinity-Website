@@ -1,107 +1,113 @@
 /**
 
 * =========================================================
-* GREEN INFINITY — OFFICIAL WEBSITE
-* Version 1.0
+* GREEN INFINITY
+* Official Website — Version 1.0
+* Institute of Materials Research and Engineering (IMRE)
+*
 * Main JavaScript
-* GitHub Pages Ready
-* =========================================================
-*
-* This file provides:
-* * Mobile navigation
-* * Sticky header behaviour
-* * Active navigation highlighting
-* * Smooth anchor navigation
-* * Scroll reveal animations
-* * Back-to-top button
-* * Dynamic copyright year
-* * Basic contact-form validation
-* * Accessibility improvements
-*
-* No external JavaScript libraries are required.
 * =========================================================
   */
 
 "use strict";
 
 /* =========================================================
-01. DOM ELEMENTS
-========================================================= */
+
+1. DOM ELEMENTS
+   ========================================================= */
 
 const siteHeader = document.getElementById("site-header");
 const menuToggle = document.getElementById("menu-toggle");
 const mobileNavigation = document.getElementById("mobile-navigation");
 const backToTop = document.getElementById("back-to-top");
-const contactForm = document.getElementById("contact-form");
 const currentYear = document.getElementById("current-year");
 
+const navigationLinks = document.querySelectorAll(
+".nav-link"
+);
+
+const mobileNavigationLinks = document.querySelectorAll(
+".mobile-navigation a"
+);
+
 /* =========================================================
-02. MOBILE NAVIGATION
+2. CURRENT YEAR
 ========================================================= */
 
-/**
+if (currentYear) {
+currentYear.textContent = new Date().getFullYear();
+}
 
-* Opens and closes the mobile navigation menu.
-  */
-  function toggleMobileNavigation() {
+/* =========================================================
+3. MOBILE NAVIGATION
+========================================================= */
 
-  if (!menuToggle || !mobileNavigation) {
-  return;
-  }
+function openMobileNavigation() {
 
-  const isOpen = menuToggle.classList.toggle("active");
+```
+if (!menuToggle || !mobileNavigation) {
+    return;
+}
 
-  mobileNavigation.classList.toggle("open", isOpen);
+menuToggle.classList.add("active");
 
-  menuToggle.setAttribute(
-  "aria-expanded",
-  String(isOpen)
-  );
+mobileNavigation.classList.add("open");
 
-  menuToggle.setAttribute(
-  "aria-label",
-  isOpen
-  ? "Close navigation menu"
-  : "Open navigation menu"
-  );
+menuToggle.setAttribute(
+    "aria-expanded",
+    "true"
+);
 
-  /*
+menuToggle.setAttribute(
+    "aria-label",
+    "Close navigation menu"
+);
+```
 
-  * Prevent background scrolling while the mobile menu
-  * is open.
-    */
-    document.body.classList.toggle(
-    "menu-open",
-    isOpen
-    );
-    }
+}
 
-/**
+function closeMobileNavigation() {
 
-* Close the mobile navigation.
-  */
-  function closeMobileNavigation() {
+```
+if (!menuToggle || !mobileNavigation) {
+    return;
+}
 
-  if (!menuToggle || !mobileNavigation) {
-  return;
-  }
+menuToggle.classList.remove("active");
 
-  menuToggle.classList.remove("active");
+mobileNavigation.classList.remove("open");
 
-  mobileNavigation.classList.remove("open");
+menuToggle.setAttribute(
+    "aria-expanded",
+    "false"
+);
 
-  menuToggle.setAttribute(
-  "aria-expanded",
-  "false"
-  );
+menuToggle.setAttribute(
+    "aria-label",
+    "Open navigation menu"
+);
+```
 
-  menuToggle.setAttribute(
-  "aria-label",
-  "Open navigation menu"
-  );
+}
 
-  document.body.classList.remove("menu-open");
-  }
+function toggleMobileNavigation() {
+
+```
+if (!mobileNavigation) {
+    return;
+}
+
+const isOpen =
+    mobileNavigation.classList.contains("open");
+
+if (isOpen) {
+    closeMobileNavigation();
+} else {
+    openMobileNavigation();
+}
+```
+
+}
 
 if (menuToggle) {
 
@@ -115,29 +121,26 @@ menuToggle.addEventListener(
 }
 
 /* =========================================================
-03. MOBILE NAVIGATION LINKS
+4. CLOSE MOBILE MENU AFTER NAVIGATION
 ========================================================= */
 
-if (mobileNavigation) {
+mobileNavigationLinks.forEach((link) => {
 
 ```
-const mobileLinks =
-    mobileNavigation.querySelectorAll("a");
+link.addEventListener(
+    "click",
+    () => {
 
-mobileLinks.forEach((link) => {
+        closeMobileNavigation();
 
-    link.addEventListener(
-        "click",
-        closeMobileNavigation
-    );
+    }
+);
+```
 
 });
-```
-
-}
 
 /* =========================================================
-04. CLOSE MENU WITH ESCAPE KEY
+5. CLOSE MOBILE MENU WITH ESCAPE
 ========================================================= */
 
 document.addEventListener(
@@ -145,56 +148,11 @@ document.addEventListener(
 (event) => {
 
 ```
-    if (
-        event.key === "Escape" &&
-        mobileNavigation &&
-        mobileNavigation.classList.contains("open")
-    ) {
-
-        closeMobileNavigation();
-
-        if (menuToggle) {
-            menuToggle.focus();
-        }
-
-    }
-
-}
-```
-
-);
-
-/* =========================================================
-05. CLOSE MENU WHEN CLICKING OUTSIDE
-========================================================= */
-
-document.addEventListener(
-"click",
-(event) => {
-
-```
-    if (
-        !mobileNavigation ||
-        !menuToggle ||
-        !mobileNavigation.classList.contains("open")
-    ) {
+    if (event.key !== "Escape") {
         return;
     }
 
-    const clickedInsideMenu =
-        mobileNavigation.contains(event.target);
-
-    const clickedMenuButton =
-        menuToggle.contains(event.target);
-
-    if (
-        !clickedInsideMenu &&
-        !clickedMenuButton
-    ) {
-
-        closeMobileNavigation();
-
-    }
+    closeMobileNavigation();
 
 }
 ```
@@ -202,113 +160,27 @@ document.addEventListener(
 );
 
 /* =========================================================
-06. STICKY HEADER
+6. HEADER SCROLL EFFECT
 ========================================================= */
 
-/**
-
-* Adds a shadow to the header once the visitor
-* starts scrolling.
-  */
-  function updateHeader() {
-
-  if (!siteHeader) {
-  return;
-  }
-
-  if (window.scrollY > 20) {
-
-  ```
-   siteHeader.classList.add("scrolled");
-  ```
-
-  } else {
-
-  ```
-   siteHeader.classList.remove("scrolled");
-  ```
-
-  }
-
-}
-
-/* =========================================================
-07. BACK TO TOP
-========================================================= */
-
-/**
-
-* Displays the back-to-top button after the visitor
-* has scrolled sufficiently down the page.
-  */
-  function updateBackToTop() {
-
-  if (!backToTop) {
-  return;
-  }
-
-  if (window.scrollY > 600) {
-
-  ```
-   backToTop.classList.add("visible");
-  ```
-
-  } else {
-
-  ```
-   backToTop.classList.remove("visible");
-  ```
-
-  }
-
-}
-
-if (backToTop) {
+function updateHeaderOnScroll() {
 
 ```
-backToTop.addEventListener(
-    "click",
-    () => {
-
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-    }
-);
-```
-
+if (!siteHeader) {
+    return;
 }
 
-/* =========================================================
-08. SCROLL PERFORMANCE
-========================================================= */
+if (window.scrollY > 40) {
 
-/*
+    siteHeader.classList.add(
+        "scrolled"
+    );
 
-* requestAnimationFrame prevents excessive layout
-* calculations when the user scrolls.
-  */
+} else {
 
-let scrollTicking = false;
-
-function handleScroll() {
-
-```
-if (!scrollTicking) {
-
-    window.requestAnimationFrame(() => {
-
-        updateHeader();
-        updateBackToTop();
-        updateActiveNavigation();
-
-        scrollTicking = false;
-
-    });
-
-    scrollTicking = true;
+    siteHeader.classList.remove(
+        "scrolled"
+    );
 
 }
 ```
@@ -317,107 +189,109 @@ if (!scrollTicking) {
 
 window.addEventListener(
 "scroll",
-handleScroll,
+updateHeaderOnScroll,
 {
 passive: true
 }
 );
 
+updateHeaderOnScroll();
+
 /* =========================================================
-09. ACTIVE NAVIGATION
+7. ACTIVE NAVIGATION
 ========================================================= */
 
-const navigationLinks =
-document.querySelectorAll(
-".nav-link"
-);
-
-const pageSections =
-document.querySelectorAll(
+const pageSections = document.querySelectorAll(
 "main section[id]"
 );
 
-/**
+function updateActiveNavigation() {
 
-* Highlights the navigation item corresponding
-* to the section currently visible.
-  */
-  function updateActiveNavigation() {
+```
+if (!pageSections.length) {
+    return;
+}
 
-  if (
-  !navigationLinks.length ||
-  !pageSections.length
-  ) {
-  return;
-  }
+const scrollPosition =
+    window.scrollY +
+    160;
 
-  const scrollPosition =
-  window.scrollY + 160;
+let currentSection = "";
 
-  let currentSectionId = "home";
+pageSections.forEach((section) => {
 
-  pageSections.forEach((section) => {
+    const sectionTop =
+        section.offsetTop;
 
-  ```
-   const sectionTop =
-       section.offsetTop;
+    const sectionHeight =
+        section.offsetHeight;
 
-   if (
-       scrollPosition >= sectionTop
-   ) {
+    if (
+        scrollPosition >= sectionTop &&
+        scrollPosition <
+            sectionTop + sectionHeight
+    ) {
 
-       currentSectionId =
-           section.id;
+        currentSection =
+            section.getAttribute("id");
 
-   }
-  ```
+    }
 
-  });
+});
 
-  navigationLinks.forEach((link) => {
 
-  ```
-   const targetId =
-       link.getAttribute("href");
+navigationLinks.forEach((link) => {
 
-   const isActive =
-       targetId === `#${currentSectionId}`;
+    const href =
+        link.getAttribute("href");
 
-   link.classList.toggle(
-       "active",
-       isActive
-   );
+    if (
+        href ===
+        `#${currentSection}`
+    ) {
 
-   if (isActive) {
+        link.classList.add(
+            "active"
+        );
 
-       link.setAttribute(
-           "aria-current",
-           "page"
-       );
+    } else {
 
-   } else {
+        link.classList.remove(
+            "active"
+        );
 
-       link.removeAttribute(
-           "aria-current"
-       );
+    }
 
-   }
-  ```
-
-  });
+});
+```
 
 }
 
+window.addEventListener(
+"scroll",
+updateActiveNavigation,
+{
+passive: true
+}
+);
+
+window.addEventListener(
+"resize",
+updateActiveNavigation
+);
+
+updateActiveNavigation();
+
 /* =========================================================
-10. SMOOTH ANCHOR NAVIGATION
+8. SMOOTH INTERNAL NAVIGATION
 ========================================================= */
 
-const anchorLinks =
+const internalLinks =
 document.querySelectorAll(
 'a[href^="#"]'
 );
 
-anchorLinks.forEach((link) => {
+internalLinks.forEach((link) => {
 
 ```
 link.addEventListener(
@@ -451,7 +325,8 @@ link.addEventListener(
                 : 0;
 
         const targetPosition =
-            target.getBoundingClientRect().top +
+            target.getBoundingClientRect()
+                .top +
             window.scrollY -
             headerHeight;
 
@@ -460,22 +335,7 @@ link.addEventListener(
             behavior: "smooth"
         });
 
-        /*
-         * Update the URL hash without causing
-         * the browser to jump unexpectedly.
-         */
-        if (
-            window.history &&
-            window.history.pushState
-        ) {
-
-            window.history.pushState(
-                null,
-                "",
-                targetId
-            );
-
-        }
+        closeMobileNavigation();
 
     }
 );
@@ -484,262 +344,54 @@ link.addEventListener(
 });
 
 /* =========================================================
-11. SCROLL REVEAL
+9. BACK TO TOP BUTTON
 ========================================================= */
 
-/**
-
-* Elements are automatically given the .reveal class
-* and animated when they enter the viewport.
-  */
-  const revealElements =
-  document.querySelectorAll(
-  ".section-header, " +
-  ".about-introduction, " +
-  ".about-values, " +
-  ".research-card, " +
-  ".highlight-content, " +
-  ".highlight-visual, " +
-  ".team-image-wrapper, " +
-  ".team-content, " +
-  ".publications-content, " +
-  ".news-card, " +
-  ".contact-information, " +
-  ".contact-form-wrapper"
-  );
-
-revealElements.forEach((element) => {
+function updateBackToTop() {
 
 ```
-element.classList.add("reveal");
-```
+if (!backToTop) {
+    return;
+}
 
-});
+if (window.scrollY > 600) {
 
-/**
-
-* Respect the user's reduced-motion preference.
-  */
-  const prefersReducedMotion =
-  window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-  ).matches;
-
-/**
-
-* IntersectionObserver is used when available.
-  */
-  if (
-  "IntersectionObserver" in window &&
-  !prefersReducedMotion
-  ) {
-
-  const revealObserver =
-  new IntersectionObserver(
-  (entries, observer) => {
-
-  ```
-           entries.forEach((entry) => {
-
-               if (!entry.isIntersecting) {
-                   return;
-               }
-
-               entry.target.classList.add(
-                   "visible"
-               );
-
-               observer.unobserve(
-                   entry.target
-               );
-
-           });
-
-       },
-       {
-           threshold: 0.12,
-           rootMargin: "0px 0px -40px 0px"
-       }
-   );
-  ```
-
-  revealElements.forEach((element) => {
-
-  ```
-   revealObserver.observe(element);
-  ```
-
-  });
-
-} else {
-
-```
-/*
- * If reduced motion is enabled or IntersectionObserver
- * is unavailable, display the content immediately.
- */
-revealElements.forEach((element) => {
-
-    element.classList.add(
+    backToTop.classList.add(
         "visible"
     );
 
-});
-```
+} else {
 
-}
-
-/* =========================================================
-12. RESEARCH CARD STAGGER
-========================================================= */
-
-const researchCards =
-document.querySelectorAll(
-".research-card"
-);
-
-researchCards.forEach(
-(card, index) => {
-
-```
-    card.style.transitionDelay =
-        `${index * 80}ms`;
+    backToTop.classList.remove(
+        "visible"
+    );
 
 }
 ```
 
-);
-
-/* =========================================================
-13. NEWS CARD STAGGER
-========================================================= */
-
-const newsCards =
-document.querySelectorAll(
-".news-card"
-);
-
-newsCards.forEach(
-(card, index) => {
-
-```
-    card.style.transitionDelay =
-        `${index * 80}ms`;
-
-}
-```
-
-);
-
-/* =========================================================
-14. DYNAMIC COPYRIGHT YEAR
-========================================================= */
-
-if (currentYear) {
-
-```
-currentYear.textContent =
-    new Date().getFullYear();
-```
-
 }
 
-/* =========================================================
-15. CONTACT FORM
-========================================================= */
+window.addEventListener(
+"scroll",
+updateBackToTop,
+{
+passive: true
+}
+);
 
-/**
+updateBackToTop();
 
-* The current contact form uses a mailto action because
-* GitHub Pages is a static hosting platform and does not
-* provide a server-side form handler.
-*
-* This validation improves the visitor experience before
-* the user's email application opens.
-  */
-
-if (contactForm) {
+if (backToTop) {
 
 ```
-contactForm.addEventListener(
-    "submit",
-    (event) => {
+backToTop.addEventListener(
+    "click",
+    () => {
 
-        const name =
-            document.getElementById("name");
-
-        const email =
-            document.getElementById("email");
-
-        const message =
-            document.getElementById("message");
-
-
-        if (
-            !name ||
-            !email ||
-            !message
-        ) {
-            return;
-        }
-
-
-        const nameValue =
-            name.value.trim();
-
-        const emailValue =
-            email.value.trim();
-
-        const messageValue =
-            message.value.trim();
-
-
-        /*
-         * Basic validation.
-         */
-        if (
-            !nameValue ||
-            !emailValue ||
-            !messageValue
-        ) {
-
-            event.preventDefault();
-
-            alert(
-                "Please complete all required fields."
-            );
-
-            return;
-
-        }
-
-
-        /*
-         * Browser-level email validation is normally
-         * sufficient, but this additional check catches
-         * obvious malformed addresses.
-         */
-        const emailPattern =
-            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-        if (
-            !emailPattern.test(
-                emailValue
-            )
-        ) {
-
-            event.preventDefault();
-
-            alert(
-                "Please enter a valid email address."
-            );
-
-            email.focus();
-
-            return;
-
-        }
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
 
     }
 );
@@ -748,104 +400,165 @@ contactForm.addEventListener(
 }
 
 /* =========================================================
-16. RESPONSIVE MENU SAFETY
+10. SCROLL REVEAL
 ========================================================= */
 
-/**
-
-* If the browser is resized from mobile to desktop,
-* ensure that the mobile menu state is cleared.
-  */
-  const mobileBreakpoint =
-  window.matchMedia(
-  "(min-width: 901px)"
-  );
-
-function handleDesktopResize() {
-
-```
-if (mobileBreakpoint.matches) {
-
-    closeMobileNavigation();
-
-}
-```
-
-}
-
-mobileBreakpoint.addEventListener(
-"change",
-handleDesktopResize
+const revealElements =
+document.querySelectorAll(
+".research-card, " +
+".value-item, " +
+".team-profile, " +
+".news-card, " +
+".publications-layout, " +
+".contact-grid"
 );
 
-/* =========================================================
-17. INITIAL STATE
-========================================================= */
-
-updateHeader();
-updateBackToTop();
-updateActiveNavigation();
-
-/* =========================================================
-18. PAGE VISIBILITY
-========================================================= */
-
-/**
-
-* When a visitor returns to the tab, refresh the
-* navigation state.
-  */
-  document.addEventListener(
-  "visibilitychange",
-  () => {
-
-  ```
-   if (
-       document.visibilityState === "visible"
-   ) {
-
-       updateHeader();
-       updateBackToTop();
-       updateActiveNavigation();
-
-   }
-  ```
-
-  }
-  );
-
-/* =========================================================
-19. IMAGE ERROR HANDLING
-========================================================= */
-
-/**
-
-* Prevent broken images from creating distracting
-* empty image areas.
-  */
-  const images =
-  document.querySelectorAll(
-  "img"
-  );
-
-images.forEach((image) => {
+if (
+"IntersectionObserver" in window &&
+revealElements.length
+) {
 
 ```
-image.addEventListener(
-    "error",
-    () => {
+const revealObserver =
+    new IntersectionObserver(
+        (entries, observer) => {
 
-        image.classList.add(
-            "image-load-error"
+            entries.forEach(
+                (entry) => {
+
+                    if (
+                        !entry.isIntersecting
+                    ) {
+                        return;
+                    }
+
+                    entry.target.classList.add(
+                        "reveal",
+                        "is-visible"
+                    );
+
+                    observer.unobserve(
+                        entry.target
+                    );
+
+                }
+            );
+
+        },
+        {
+            threshold: 0.12,
+            rootMargin:
+                "0px 0px -50px 0px"
+        }
+    );
+
+
+revealElements.forEach(
+    (element) => {
+
+        element.classList.add(
+            "reveal"
+        );
+
+        revealObserver.observe(
+            element
         );
 
     }
 );
 ```
 
-});
+} else {
+
+```
+revealElements.forEach(
+    (element) => {
+
+        element.classList.add(
+            "is-visible"
+        );
+
+    }
+);
+```
+
+}
 
 /* =========================================================
-END OF GREEN INFINITY JAVASCRIPT
+11. CONTACT FORM
 ========================================================= */
+
+const contactForm =
+document.getElementById(
+"contact-form"
+);
+
+if (contactForm) {
+
+```
+contactForm.addEventListener(
+    "submit",
+    () => {
+
+        /*
+         * The form currently uses a mailto action.
+         *
+         * The browser will open the user's default
+         * email application with the form information.
+         *
+         * A server-side form service can be added later
+         * if Green Infinity requires direct web submissions.
+         */
+
+    }
+);
+```
+
+}
+
+/* =========================================================
+12. HANDLE RESIZE
+========================================================= */
+
+window.addEventListener(
+"resize",
+() => {
+
+```
+    /*
+     * If the visitor expands the browser from mobile
+     * to desktop while the mobile menu is open,
+     * close the mobile navigation.
+     */
+
+    if (
+        window.innerWidth > 760
+    ) {
+
+        closeMobileNavigation();
+
+    }
+
+}
+```
+
+);
+
+/* =========================================================
+13. INITIAL PAGE STATE
+========================================================= */
+
+document.addEventListener(
+"DOMContentLoaded",
+() => {
+
+```
+    updateHeaderOnScroll();
+    updateBackToTop();
+    updateActiveNavigation();
+
+}
+```
+
+);
 
