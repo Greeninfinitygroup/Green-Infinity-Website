@@ -765,93 +765,220 @@ color: var(--color-white);
 }
 
 /* =========================================================
-12. ABOUT
-========================================================= */
+   ABOUT GREEN INFINITY
+   Clean research-institute layout
+   ========================================================= */
 
 .about-section {
-background: var(--color-white);
+    padding: 120px 0;
 }
+
+.about-section .container {
+    width: min(calc(100% - 100px), 1380px);
+    margin-inline: auto;
+}
+
+
+/* ---------------------------------------------------------
+   Main layout
+   --------------------------------------------------------- */
 
 .about-grid {
-display: grid;
-
-```
-grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(0, 0.95fr);
-
-gap: 100px;
-
-align-items: start;
-```
-
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.45fr);
+    gap: 100px;
+    align-items: start;
 }
 
+
+/* ---------------------------------------------------------
+   Introduction
+   --------------------------------------------------------- */
+
 .about-introduction {
-max-width: 680px;
+    max-width: 760px;
+}
+
+.about-introduction .eyebrow {
+    margin: 0 0 34px;
+}
+
+.about-introduction .section-header {
+    margin-bottom: 42px;
+}
+
+.about-introduction .section-header h2 {
+    margin: 0;
+    max-width: 760px;
+}
+
+.about-introduction .section-rule {
+    width: 64px;
+    height: 3px;
+    margin-top: 32px;
+    background: var(--accent);
 }
 
 .about-introduction p {
-max-width: 650px;
+    max-width: 720px;
 }
+
+.about-introduction .lead {
+    margin-bottom: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   Research focus areas
+   --------------------------------------------------------- */
 
 .about-values {
-display: flex;
-
-```
-flex-direction: column;
-```
-
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 150px;
+    border-top: 1px solid var(--border);
 }
+
+
+/* Individual research area */
 
 .value-item {
-display: grid;
-
-```
-grid-template-columns: 54px 1fr;
-
-gap: 20px;
-
-padding: 28px 0;
-
-border-top: 1px solid var(--color-border);
-```
-
+    min-width: 0;
+    padding: 42px 36px 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
 }
 
-.value-item:last-child {
-border-bottom: 1px solid var(--color-border);
+
+/* Vertical separators */
+
+.value-item + .value-item {
+    border-left: 1px solid var(--border);
 }
+
+
+/* Number */
 
 .value-number {
-color: var(--color-accent-dark);
+    display: block;
+    margin-bottom: 34px;
 
-```
-font-size: 0.78rem;
-font-weight: 700;
-
-letter-spacing: 0.08em;
-```
-
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--accent);
 }
+
+
+/* Heading */
 
 .value-item h3 {
-margin-bottom: 8px;
+    margin: 0 0 16px;
 
-```
-font-family: var(--font-body);
-font-size: 1.08rem;
-font-weight: 700;
-```
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    line-height: 1.2;
+    font-weight: 600;
+    color: var(--text);
+}
+
+
+/* Description */
+
+.value-item p {
+    margin: 0;
+    max-width: 360px;
+
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   Tablet
+   --------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+    .about-section {
+        padding: 100px 0;
+    }
+
+    .about-section .container {
+        width: min(calc(100% - 64px), 1180px);
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .about-introduction {
+        max-width: 800px;
+    }
+
+    .about-values {
+        margin-top: 20px;
+    }
+
+    .value-item {
+        padding-inline: 28px;
+    }
 
 }
 
-.value-item p {
-margin-bottom: 0;
 
-```
-font-size: 0.94rem;
-```
+/* ---------------------------------------------------------
+   Mobile
+   --------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+    .about-section {
+        padding: 80px 0;
+    }
+
+    .about-section .container {
+        width: min(calc(100% - 40px), 680px);
+    }
+
+    .about-grid {
+        gap: 60px;
+    }
+
+    .about-introduction .section-header {
+        margin-bottom: 32px;
+    }
+
+    .about-values {
+        grid-template-columns: 1fr;
+        margin-top: 10px;
+    }
+
+    .value-item {
+        padding: 32px 0;
+    }
+
+    .value-item + .value-item {
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+
+    .value-number {
+        margin-bottom: 20px;
+    }
+
+    .value-item h3 {
+        font-size: 1.35rem;
+    }
+
+    .value-item p {
+        max-width: 100%;
+    }
 
 }
 
