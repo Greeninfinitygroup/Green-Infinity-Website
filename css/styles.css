@@ -5876,3 +5876,278 @@ html {
     }
 
 }
+
+/* =========================================================
+   ABOUT GREEN INFINITY — FINAL CLEAN LAYOUT
+   ========================================================= */
+
+/* Main About section */
+.about-section {
+    padding: 120px 0 130px !important;
+    background: #ffffff !important;
+}
+
+
+/* Wider, centered content area */
+.about-section > .container {
+    width: min(calc(100% - 100px), 1380px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* =========================================================
+   ABOUT INTRODUCTION
+   ========================================================= */
+
+.about-section .about-grid {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+
+/* Introduction should occupy the full width */
+.about-section .about-introduction {
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 !important;
+}
+
+
+/* Eyebrow */
+.about-section .about-introduction .eyebrow {
+    margin: 0 0 30px !important;
+}
+
+
+/* Main heading */
+.about-section .about-introduction .section-header {
+    margin: 0 0 42px !important;
+}
+
+
+.about-section .about-introduction .section-header h2 {
+    max-width: 850px !important;
+    margin: 0 !important;
+}
+
+
+/* Green accent line */
+.about-section .about-introduction .section-rule {
+    width: 64px !important;
+    height: 3px !important;
+    margin-top: 32px !important;
+    background: var(--color-accent) !important;
+}
+
+
+/* Introduction paragraphs */
+.about-section .about-introduction p {
+    max-width: 850px !important;
+}
+
+
+.about-section .about-introduction .lead {
+    margin-bottom: 28px !important;
+}
+
+
+/* =========================================================
+   THREE RESEARCH AREAS
+   ========================================================= */
+
+.about-section .about-values {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr)) !important;
+
+    width: 100% !important;
+
+    margin-top: 110px !important;
+    padding-top: 42px !important;
+
+    border-top: 1px solid var(--color-border) !important;
+
+    gap: 0 !important;
+}
+
+
+/* =========================================================
+   INDIVIDUAL RESEARCH AREA
+   ========================================================= */
+
+.about-section .value-item {
+    display: block !important;
+
+    min-width: 0 !important;
+    width: auto !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 48px 0 0 !important;
+
+    border: none !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+
+    background: transparent !important;
+
+    box-shadow: none !important;
+}
+
+
+/* Space between columns */
+.about-section .value-item + .value-item {
+    padding-left: 48px !important;
+    border-left: 1px solid var(--color-border) !important;
+}
+
+
+/* =========================================================
+   NUMBERS
+   ========================================================= */
+
+.about-section .value-number {
+    display: block !important;
+
+    margin: 0 0 30px !important;
+
+    font-family: var(--font-body) !important;
+
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+
+    line-height: 1 !important;
+
+    letter-spacing: 0.16em !important;
+
+    color: var(--color-accent-dark) !important;
+}
+
+
+/* =========================================================
+   RESEARCH AREA TITLES
+   ========================================================= */
+
+.about-section .value-item h3 {
+    margin: 0 0 14px !important;
+
+    font-family: var(--font-heading) !important;
+
+    font-size: 1.45rem !important;
+
+    font-weight: 600 !important;
+
+    line-height: 1.25 !important;
+
+    color: var(--color-text) !important;
+}
+
+
+/* =========================================================
+   RESEARCH AREA DESCRIPTIONS
+   ========================================================= */
+
+.about-section .value-item p {
+    max-width: 380px !important;
+
+    margin: 0 !important;
+
+    font-family: var(--font-body) !important;
+
+    font-size: 1rem !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.7 !important;
+
+    color: var(--color-text-light) !important;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-section {
+        padding: 100px 0 110px !important;
+    }
+
+    .about-section > .container {
+        width: min(calc(100% - 64px), 1180px) !important;
+    }
+
+    .about-section .about-values {
+        grid-template-columns: 1fr !important;
+
+        margin-top: 80px !important;
+
+        gap: 0 !important;
+    }
+
+    .about-section .value-item {
+        padding: 0 0 40px !important;
+    }
+
+    .about-section .value-item + .value-item {
+        padding: 40px 0 0 !important;
+
+        border-left: none !important;
+
+        border-top: 1px solid var(--color-border) !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding: 80px 0 90px !important;
+    }
+
+    .about-section > .container {
+        width: min(calc(100% - 40px), 680px) !important;
+    }
+
+    .about-section .about-introduction {
+        max-width: 100% !important;
+    }
+
+    .about-section .about-values {
+        margin-top: 65px !important;
+        padding-top: 30px !important;
+    }
+
+    .about-section .value-item {
+        padding-bottom: 32px !important;
+    }
+
+    .about-section .value-item + .value-item {
+        padding-top: 32px !important;
+    }
+
+    .about-section .value-number {
+        margin-bottom: 22px !important;
+    }
+
+    .about-section .value-item h3 {
+        font-size: 1.35rem !important;
+    }
+
+    .about-section .value-item p {
+        max-width: 100% !important;
+        font-size: 0.95rem !important;
+    }
+
+}
