@@ -4785,3 +4785,47 @@ html {
         justify-self: stretch;
     }
 }
+
+/* =========================================================
+   CONTACT EMAIL — CLEAN SPACING
+========================================================= */
+
+.contact-email {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 42px;
+}
+
+.contact-email-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #31564b;
+}
+
+.contact-email-address {
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #142d26;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.contact-email-address:hover {
+    color: #78c91a;
+}
+
+@media (max-width: 700px) {
+
+    .contact-email {
+        margin-top: 32px;
+    }
+
+    .contact-email-address {
+        font-size: 1.15rem;
+    }
+}
