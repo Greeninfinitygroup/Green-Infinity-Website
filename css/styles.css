@@ -4628,3 +4628,78 @@ html {
     }
 
 }
+
+/* =========================================================
+   NEWS SECTION — FINAL LAYOUT POLISH
+========================================================= */
+
+/* Wider News content area */
+.news-section .container {
+    width: min(calc(100% - 100px), 1380px);
+    margin-inline: auto;
+}
+
+/* Keep the introduction wide */
+.news-section .news-introduction {
+    width: 100%;
+    max-width: none;
+}
+
+/* Clear separation between the News introduction and cards */
+.news-section .news-grid {
+    width: 100%;
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+
+    align-items: stretch;
+}
+
+/* Consistent cards */
+.news-section .news-card {
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+
+    padding: 72px 76px;
+
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--accent);
+
+    border-radius: 0 0 10px 10px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   NEWS SECTION — MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .news-section .container {
+        width: min(calc(100% - 40px), 1180px);
+    }
+
+    .news-section .news-introduction {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .news-section .news-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 50px;
+    }
+
+    .news-section .news-card {
+        min-height: auto;
+        padding: 48px 36px;
+    }
+
+}
