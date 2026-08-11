@@ -4562,13 +4562,6 @@ html {
     margin-inline: auto;
 }
 
-.news-section .news-introduction {
-    max-width: none;
-    width: 100%;
-    white-space: nowrap;
-}
-
-
 /* =========================================================
    NEWS SECTION — MOBILE
    ========================================================= */
@@ -4578,12 +4571,6 @@ html {
     .news-section .container {
         width: min(calc(100% - 40px), 1180px);
     }
-
-    .news-section .news-introduction {
-        max-width: 100%;
-        white-space: normal;
-    }
-
 }
 
 /* =========================================================
