@@ -4829,3 +4829,263 @@ html {
         font-size: 1.15rem;
     }
 }
+
+/* =========================================================
+   CONTACT SECTION — CLEAN RESEARCH LAB STYLE
+========================================================= */
+
+.contact-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   Header
+--------------------------------------------------------- */
+
+.contact-header {
+    max-width: 900px;
+}
+
+.contact-header h2 {
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+.contact-header .lead {
+    max-width: 760px;
+    margin-top: 32px;
+}
+
+
+/* ---------------------------------------------------------
+   Email
+--------------------------------------------------------- */
+
+.contact-email {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+
+    margin-top: 58px;
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid var(--border-color);
+}
+
+.contact-label {
+    flex: 0 0 auto;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: var(--text-muted);
+}
+
+.contact-email-link {
+    font-size: 1.15rem;
+    font-weight: 600;
+
+    color: var(--text-color);
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.contact-email-link:hover {
+    color: var(--accent-color);
+}
+
+
+/* ---------------------------------------------------------
+   Form Wrapper
+--------------------------------------------------------- */
+
+.contact-form-wrapper {
+    margin-top: 48px;
+
+    padding: 42px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.45);
+}
+
+
+/* ---------------------------------------------------------
+   Form Layout
+--------------------------------------------------------- */
+
+.contact-form {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    column-gap: 36px;
+    row-gap: 30px;
+}
+
+
+/* ---------------------------------------------------------
+   Individual Fields
+--------------------------------------------------------- */
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field-message {
+    grid-column: 1 / -1;
+}
+
+
+.form-field label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    color: var(--text-color);
+}
+
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: var(--text-color);
+
+    font: inherit;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.form-field input {
+    min-height: 52px;
+}
+
+
+.form-field textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* ---------------------------------------------------------
+   Form Focus
+--------------------------------------------------------- */
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--accent-color);
+
+    box-shadow:
+        0 0 0 3px rgba(126, 203, 23, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   Submit Button
+--------------------------------------------------------- */
+
+.form-submit {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-start;
+
+    margin-top: 4px;
+}
+
+
+.form-submit .button {
+    min-width: 170px;
+
+    justify-content: center;
+}
+
+
+/* ---------------------------------------------------------
+   Mobile
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .contact-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .contact-email {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-top: 45px;
+    }
+
+    .contact-form-wrapper {
+        margin-top: 36px;
+
+        padding: 28px 22px;
+    }
+
+    .contact-form {
+        grid-template-columns: 1fr;
+
+        row-gap: 24px;
+    }
+
+    .form-field-message,
+    .form-submit {
+        grid-column: auto;
+    }
+
+    .form-submit {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Small Mobile
+--------------------------------------------------------- */
+
+@media (max-width: 560px) {
+
+    .contact-form-wrapper {
+        padding: 24px 18px;
+
+        border-radius: 14px;
+    }
+
+    .contact-email-link {
+        font-size: 1rem;
+    }
+
+}
