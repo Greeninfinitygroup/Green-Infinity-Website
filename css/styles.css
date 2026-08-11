@@ -5089,3 +5089,123 @@ html {
     }
 
 }
+
+/* =========================================================
+   CONTACT SECTION — FINAL
+========================================================= */
+
+.contact-section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   Contact Header
+--------------------------------------------------------- */
+
+.contact-header {
+    max-width: 900px;
+}
+
+.contact-header h2 {
+    max-width: 760px;
+    margin-bottom: 32px;
+}
+
+.contact-header .lead {
+    max-width: 760px;
+    margin-top: 32px;
+}
+
+
+/* ---------------------------------------------------------
+   Email Contact
+--------------------------------------------------------- */
+
+.contact-email {
+    display: flex;
+    align-items: baseline;
+    gap: 28px;
+
+    margin-top: 58px;
+    padding-top: 28px;
+
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-label {
+    flex: 0 0 auto;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1.4;
+
+    text-transform: uppercase;
+
+    color: var(--text-muted);
+}
+
+
+/* ---------------------------------------------------------
+   Email Link
+--------------------------------------------------------- */
+
+.contact-email-link {
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.5;
+
+    color: var(--text-color);
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        text-decoration-color 0.2s ease;
+}
+
+.contact-email-link:hover {
+    color: var(--accent-color);
+
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive — Tablet & Mobile
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .contact-section {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .contact-email {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 8px;
+
+        margin-top: 45px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   Responsive — Small Mobile
+--------------------------------------------------------- */
+
+@media (max-width: 560px) {
+
+    .contact-email-link {
+        font-size: 1rem;
+    }
+
+}
