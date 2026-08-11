@@ -4690,3 +4690,98 @@ html {
     }
 
 }
+
+/* =========================================================
+   CONTACT FORM — CLEAN PROFESSIONAL LAYOUT
+========================================================= */
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+    margin-top: 48px;
+    padding: 42px;
+    border: 1px solid rgba(20, 45, 38, 0.12);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-field-message {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    border: 1px solid rgba(20, 45, 38, 0.16);
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 16px 18px;
+    font: inherit;
+    color: #142d26;
+    box-sizing: border-box;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-field input {
+    min-height: 54px;
+}
+
+.form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #78c91a;
+    box-shadow: 0 0 0 3px rgba(120, 201, 26, 0.12);
+}
+
+.contact-submit {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 4px;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTACT FORM — MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .contact-form {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        gap: 24px;
+    }
+
+    .form-field-message {
+        grid-column: auto;
+    }
+
+    .contact-submit {
+        grid-column: auto;
+        width: 100%;
+        justify-self: stretch;
+    }
+}
