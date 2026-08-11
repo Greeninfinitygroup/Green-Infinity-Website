@@ -4585,3 +4585,46 @@ html {
     }
 
 }
+
+/* =========================================================
+   NEWS — FINAL DESKTOP ALIGNMENT FIX
+   ========================================================= */
+
+/* Keep the News introduction on one line */
+.news-section .news-introduction {
+    width: 100% !important;
+    max-width: none !important;
+    white-space: nowrap !important;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+}
+
+
+/* Give every News card the same internal spacing */
+.news-section .news-card {
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+
+/* Make the first card align with the other cards */
+.news-section .news-card:first-child {
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+
+    .news-section .news-introduction {
+        white-space: normal !important;
+        font-size: 18px;
+    }
+
+    .news-section .news-card,
+    .news-section .news-card:first-child {
+        padding: 40px;
+    }
+
+}
