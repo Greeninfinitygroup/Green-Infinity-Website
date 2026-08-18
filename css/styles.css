@@ -6844,3 +6844,19 @@ html {
     }
 
 }
+
+/* =========================================================
+   RESEARCH PUBLICATIONS — CITATION SEPARATION
+   ========================================================= */
+
+.research-publication {
+    padding-bottom: 28px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.research-publication:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
