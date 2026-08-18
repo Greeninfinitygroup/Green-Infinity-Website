@@ -6599,3 +6599,248 @@ html {
     }
 
 }
+
+/* =========================================================
+   RESEARCH SECTION — CLEAN EDITORIAL LAYOUT
+   ========================================================= */
+
+.research-section {
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+/* Research heading */
+.research-section .section-header {
+    margin-bottom: 70px;
+}
+
+/* Remove unnecessary introduction spacing */
+.research-section .research-introduction {
+    display: none;
+}
+
+/* =========================================================
+   RESEARCH GRID
+   ========================================================= */
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    align-items: stretch;
+}
+
+/* =========================================================
+   RESEARCH CARDS
+   ========================================================= */
+
+.research-card {
+    display: flex;
+    flex-direction: column;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(20, 45, 35, 0.14);
+    border-top: 4px solid #78be20;
+
+    border-radius: 10px;
+
+    padding: 0 34px 42px;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   RESEARCH IMAGE AREA
+   ========================================================= */
+
+.research-card .research-image {
+    width: calc(100% + 68px);
+    height: 230px;
+
+    margin-left: -34px;
+    margin-right: -34px;
+
+    margin-bottom: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f6f1;
+
+    overflow: hidden;
+}
+
+/*
+   Temporary placeholder.
+   Replace with the actual image later.
+*/
+.research-card .research-image-placeholder {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #527269;
+}
+
+/* Actual research image */
+.research-card .research-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =========================================================
+   RESEARCH CARD CONTENT
+   ========================================================= */
+
+.research-card h3 {
+    margin: 0 0 20px;
+
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 2.4vw, 2.45rem);
+    line-height: 1.08;
+    font-weight: 500;
+
+    color: #10251e;
+}
+
+.research-card > p {
+    margin: 0 0 28px;
+
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #526c65;
+}
+
+/* =========================================================
+   PUBLICATIONS
+   ========================================================= */
+
+.research-publications {
+    margin-top: auto;
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(20, 45, 35, 0.14);
+}
+
+.research-publications h4 {
+    margin: 0 0 22px;
+
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    line-height: 1.2;
+
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    font-weight: 600;
+
+    color: #527269;
+}
+
+/* Individual citation */
+.research-publication {
+    margin: 0 0 22px;
+
+    font-family: var(--font-sans);
+    font-size: 0.94rem;
+    line-height: 1.65;
+
+    color: #526c65;
+}
+
+/* Last citation has no unnecessary bottom spacing */
+.research-publication:last-child {
+    margin-bottom: 0;
+}
+
+/*
+   Publication year is now treated as normal text,
+   rather than a highlighted heading.
+*/
+.research-publication .publication-year {
+    display: inline;
+    font-weight: 400;
+    letter-spacing: normal;
+    color: inherit;
+}
+
+/* Publication title */
+.research-publication .publication-title {
+    color: #243f36;
+}
+
+/* Journal name */
+.research-publication em {
+    color: #526c65;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .research-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .research-card {
+        padding: 0 32px 38px;
+    }
+
+    .research-card .research-image {
+        width: calc(100% + 64px);
+
+        margin-left: -32px;
+        margin-right: -32px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .research-section {
+        padding-top: 80px;
+        padding-bottom: 90px;
+    }
+
+    .research-section .section-header {
+        margin-bottom: 50px;
+    }
+
+    .research-card {
+        padding: 0 24px 32px;
+    }
+
+    .research-card .research-image {
+        width: calc(100% + 48px);
+        height: 200px;
+
+        margin-left: -24px;
+        margin-right: -24px;
+
+        margin-bottom: 28px;
+    }
+
+    .research-card h3 {
+        font-size: 1.9rem;
+    }
+
+    .research-publication {
+        font-size: 0.92rem;
+    }
+
+}
