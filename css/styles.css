@@ -6151,3 +6151,222 @@ html {
     }
 
 }
+
+/* =========================================================
+   RESEARCH TOPICS — RESEARCH AREAS & SELECTED PUBLICATIONS
+   ========================================================= */
+
+.research-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 70px;
+}
+
+
+/* ---------------------------------------------------------
+   Research Card
+   --------------------------------------------------------- */
+
+.research-card {
+    min-width: 0;
+    border: 1px solid var(--border-color, #d8dfdb);
+    border-top: 4px solid var(--accent-color, #7fbd32);
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------------------
+   Research Image Placeholder
+   --------------------------------------------------------- */
+
+.research-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #edf3ef;
+}
+
+.research-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6c7b76;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Card Content
+   --------------------------------------------------------- */
+
+.research-card-content {
+    padding: 34px 34px 40px;
+}
+
+.research-number {
+    display: block;
+    margin-bottom: 18px;
+
+    color: var(--accent-color, #7fbd32);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+
+.research-card h3 {
+    margin: 0 0 18px;
+
+    color: var(--heading-color, #0b211b);
+    font-family: var(
+        --font-display,
+        Georgia,
+        "Times New Roman",
+        serif
+    );
+
+    font-size: clamp(1.7rem, 2.2vw, 2.25rem);
+    line-height: 1.08;
+    font-weight: 500;
+}
+
+
+.research-description {
+    margin: 0 0 34px;
+
+    color: var(--text-secondary, #536b66);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ---------------------------------------------------------
+   Selected Publications
+   --------------------------------------------------------- */
+
+.research-publications {
+    border-top: 1px solid var(--border-color, #d8dfdb);
+    padding-top: 26px;
+}
+
+
+.publications-label {
+    margin: 0 0 22px;
+
+    color: var(--heading-color, #0b211b);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
+/* ---------------------------------------------------------
+   Individual Publication
+   --------------------------------------------------------- */
+
+.publication-item {
+    padding: 0 0 24px;
+    margin: 0 0 24px;
+    border-bottom: 1px solid #e4e9e6;
+}
+
+
+.publication-item:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+
+.publication-year {
+    display: block;
+    margin-bottom: 8px;
+
+    color: var(--accent-color, #7fbd32);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+
+.publication-item p {
+    margin: 0 0 7px;
+
+    color: var(--text-secondary, #536b66);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+
+.publication-item .publication-title {
+    color: var(--heading-color, #0b211b);
+    font-weight: 600;
+}
+
+
+.publication-item .publication-journal {
+    margin-bottom: 0;
+
+    font-size: 0.82rem;
+    font-style: italic;
+    color: #71807b;
+}
+
+
+/* =========================================================
+   RESEARCH — TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .research-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .research-card-content {
+        padding: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   RESEARCH — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .research-grid {
+        margin-top: 50px;
+        gap: 24px;
+    }
+
+    .research-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .research-card-content {
+        padding: 26px 24px 32px;
+    }
+
+    .research-card h3 {
+        font-size: 1.75rem;
+    }
+
+    .research-description {
+        font-size: 0.95rem;
+    }
+
+}
