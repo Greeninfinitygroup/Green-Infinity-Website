@@ -6365,6 +6365,235 @@ html {
         font-size: 1.75rem;
     }
 
+   /* =========================================================
+   RESEARCH SECTION — FINAL LAYOUT
+========================================================= */
+
+.research-section {
+    padding-top: 110px;
+    padding-bottom: 120px;
+}
+
+
+/* ---------------------------------------------------------
+   Research Header
+--------------------------------------------------------- */
+
+.research-header {
+    width: min(100%, 1180px);
+    margin-inline: auto;
+}
+
+.research-header h2 {
+    max-width: 900px;
+    margin: 18px 0 35px;
+}
+
+.research-header .section-rule {
+    width: 100%;
+    margin-bottom: 38px;
+}
+
+.research-introduction {
+    max-width: 100%;
+    margin: 0;
+
+    font-size: 1.25rem;
+    line-height: 1.65;
+}
+
+
+/* ---------------------------------------------------------
+   Research Grid
+--------------------------------------------------------- */
+
+.research-grid {
+    width: min(100%, 1180px);
+
+    margin: 75px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   Research Cards
+--------------------------------------------------------- */
+
+.research-card {
+    min-width: 0;
+
+    border: 1px solid rgba(20, 45, 35, 0.16);
+
+    border-top: 4px solid #78be20;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------------------------------------------------------
+   Research Image Placeholder
+--------------------------------------------------------- */
+
+.research-image-placeholder {
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f3f6f2;
+
+    color: #526d60;
+
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+
+/* ---------------------------------------------------------
+   Card Content
+--------------------------------------------------------- */
+
+.research-card-content {
+    padding: 34px 34px 42px;
+}
+
+.research-card h3 {
+    margin: 0 0 20px;
+
+    font-family: var(
+        --font-serif,
+        "Playfair Display",
+        Georgia,
+        serif
+    );
+
+    font-size: clamp(1.7rem, 2vw, 2.25rem);
+
+    line-height: 1.12;
+
+    color: #10231c;
+}
+
+.research-description {
+    margin: 0;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    color: #526d60;
+}
+
+
+/* ---------------------------------------------------------
+   Publications
+--------------------------------------------------------- */
+
+.research-publications {
+    margin-top: 38px;
+
+    padding-top: 28px;
+
+    border-top: 1px solid rgba(20, 45, 35, 0.14);
+}
+
+.publications-label {
+    margin: 0 0 22px;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    color: #10231c;
+}
+
+
+/* Publication year is intentionally subtle.
+   It is NOT highlighted as a heading. */
+
+.publication-year {
+    margin: 22px 0 8px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    color: #526d60;
+}
+
+
+/* Each citation remains one continuous paragraph. */
+
+.publication {
+    margin: 0;
+
+    font-size: 0.91rem;
+
+    line-height: 1.7;
+
+    color: #526d60;
+}
+
+.publication em {
+    font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   Responsive
+--------------------------------------------------------- */
+
+@media (max-width: 1000px) {
+
+    .research-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 720px;
+    }
+
+    .research-header {
+        max-width: 720px;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .research-section {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .research-grid {
+        margin-top: 50px;
+    }
+
+    .research-card-content {
+        padding: 28px 26px 34px;
+    }
+
+    .research-introduction {
+        font-size: 1.1rem;
+    }
+
+}
     .research-description {
         font-size: 0.95rem;
     }
