@@ -6186,7 +6186,7 @@ html {
 
 .research-image {
     width: 100%;
-    height: 180px;
+    height: 160px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -6214,6 +6214,13 @@ html {
     text-transform: uppercase;
 }
 
+/* Adjust the first research image */
+.research-card:first-child .research-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
 
 /* ---------------------------------------------------------
    Card Content
