@@ -6659,16 +6659,15 @@ html {
 }
 
 /* =========================================================
-   RESEARCH IMAGE AREA
+   Research Card Image
    ========================================================= */
 
 .research-card .research-image {
-    width: calc(100% + 68px);
-    height: 230px;
+    width: 100%;
+    height: auto;
 
     margin-left: -34px;
     margin-right: -34px;
-
     margin-bottom: 34px;
 
     display: flex;
@@ -6680,10 +6679,7 @@ html {
     overflow: visible;
 }
 
-/*
-   Temporary placeholder.
-   Replace with the actual image later.
-*/
+/* Temporary placeholder */
 .research-card .research-image-placeholder {
     font-family: var(--font-sans);
     font-size: 0.78rem;
