@@ -6691,8 +6691,8 @@ html {
     align-items: center;
     justify-content: center;
 
-    background: #f3f6f1;
-    overflow: hidden;
+    background: transparent;
+    overflow: visible;
 }
 
 .research-card .research-image img {
@@ -6707,16 +6707,12 @@ html {
     object-fit: contain;
     object-position: center;
 
-    margin: auto;
+    margin: 0 auto;
 }
 
 /* Placeholder */
 .research-card .research-image-placeholder {
-    font-family: var(--font-sans);
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: #527269;
+    background: transparent;
 }
 /* =========================================================
    RESEARCH CARD CONTENT
