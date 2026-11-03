@@ -6183,23 +6183,30 @@ html {
 /* ---------------------------------------------------------
    Research Images
    --------------------------------------------------------- */
-
 .research-image {
     width: 100%;
     height: auto;
-    overflow: visible;
+    min-height: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: visible;
     background: #edf3ef;
 }
 
 .research-image img {
     display: block;
+
     width: 100%;
     height: auto;
+    max-height: none;
+
     object-fit: contain;
     object-position: center;
+
+    transform: none;
 }
 
 /* ---------------------------------------------------------
@@ -6670,7 +6677,7 @@ html {
 
     background: #f3f6f1;
 
-    overflow: hidden;
+    overflow: visible;
 }
 
 /*
@@ -6688,9 +6695,10 @@ html {
 /* Actual research image */
 .research-card .research-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
 
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 
     display: block;
 }
