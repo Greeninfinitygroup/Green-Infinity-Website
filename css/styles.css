@@ -6934,3 +6934,32 @@ html {
     right: auto !important;
     transform: none !important;
 }
+/* ---------------------------------------------------------
+   Research Image — Centre Actual Images
+--------------------------------------------------------- */
+
+.research-card .research-image {
+    width: 100%;
+    height: 230px;
+    margin: 0 0 34px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    overflow: hidden;
+}
+
+.research-card .research-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    object-fit: contain;
+    object-position: center;
+
+    float: none;
+}
