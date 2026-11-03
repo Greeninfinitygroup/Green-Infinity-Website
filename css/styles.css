@@ -6186,7 +6186,7 @@ html {
 
 .research-image {
     width: 100%;
-    height: 160px;
+    height: 220px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -6199,19 +6199,7 @@ html {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-.research-image-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: #6c7b76;
-    font-size: 0.85rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    object-position: center;
 }
 
 /* Adjust the first research image */
