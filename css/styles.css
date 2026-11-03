@@ -6181,14 +6181,24 @@ html {
 
 
 /* ---------------------------------------------------------
-   Research Image Placeholder
+   Research Images
    --------------------------------------------------------- */
 
 .research-image {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    height: 220px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #edf3ef;
+}
+
+.research-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .research-image-placeholder {
