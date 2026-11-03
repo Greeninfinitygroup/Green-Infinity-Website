@@ -6183,34 +6183,49 @@ html {
 
 
 /* ---------------------------------------------------------
-   Research Images
-   --------------------------------------------------------- */
-.research-image {
+   /* =========================================================
+   Research Card Images
+   ========================================================= */
+
+.research-card .research-image {
     width: 100%;
-    height: auto;
-    min-height: 0;
+    height: 230px;
+
+    margin-left: -34px;
+    margin-right: -34px;
+    margin-bottom: 34px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    overflow: visible;
-    background: #edf3ef;
+    background: #f3f6f1;
+    overflow: hidden;
 }
 
-.research-image img {
+.research-card .research-image img {
     display: block;
 
-    width: 100%;
+    width: auto;
     height: auto;
-    max-height: none;
+
+    max-width: 100%;
+    max-height: 100%;
 
     object-fit: contain;
     object-position: center;
 
-    transform: none;
+    margin: auto;
 }
 
+/* Placeholder */
+.research-card .research-image-placeholder {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #527269;
+}
 /* ---------------------------------------------------------
    Card Content
    --------------------------------------------------------- */
