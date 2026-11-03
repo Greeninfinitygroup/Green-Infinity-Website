@@ -6877,3 +6877,27 @@ html {
     margin-bottom: 0;
     border-bottom: none;
 }
+
+/* ---------------------------------------------------------
+   Team Photo
+   --------------------------------------------------------- */
+
+.team-photo-section {
+    padding: 50px 0;
+    background: #ffffff;
+}
+
+.team-photo-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.team-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
