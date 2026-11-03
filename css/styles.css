@@ -6882,15 +6882,10 @@ html {
    Team Photo
    --------------------------------------------------------- */
 
-.team-photo-section {
-    padding: 50px 0;
-    background: #ffffff;
-}
-
 .team-photo-wrapper {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 75%;
+    max-width: 825px;
+    margin: 0 auto 50px;
     overflow: hidden;
     border-radius: 12px;
 }
@@ -6900,4 +6895,5 @@ html {
     width: 100%;
     height: auto;
     object-fit: contain;
+}ntain;
 }
